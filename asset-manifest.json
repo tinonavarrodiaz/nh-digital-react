@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/nh-digital-react/static/css/main.81bf39c7.chunk.css",
+    "main.js": "/nh-digital-react/static/js/main.1444005c.chunk.js",
+    "main.js.map": "/nh-digital-react/static/js/main.1444005c.chunk.js.map",
+    "runtime-main.js": "/nh-digital-react/static/js/runtime-main.1884342c.js",
+    "runtime-main.js.map": "/nh-digital-react/static/js/runtime-main.1884342c.js.map",
+    "static/js/2.143cdc01.chunk.js": "/nh-digital-react/static/js/2.143cdc01.chunk.js",
+    "static/js/2.143cdc01.chunk.js.map": "/nh-digital-react/static/js/2.143cdc01.chunk.js.map",
+    "static/js/3.935f6c79.chunk.js": "/nh-digital-react/static/js/3.935f6c79.chunk.js",
+    "static/js/3.935f6c79.chunk.js.map": "/nh-digital-react/static/js/3.935f6c79.chunk.js.map",
+    "index.html": "/nh-digital-react/index.html",
+    "static/css/main.81bf39c7.chunk.css.map": "/nh-digital-react/static/css/main.81bf39c7.chunk.css.map",
+    "static/js/2.143cdc01.chunk.js.LICENSE.txt": "/nh-digital-react/static/js/2.143cdc01.chunk.js.LICENSE.txt",
+    "static/media/down.6e71d8bf.svg": "/nh-digital-react/static/media/down.6e71d8bf.svg",
+    "static/media/logo_light.22ba0c82.svg": "/nh-digital-react/static/media/logo_light.22ba0c82.svg",
+    "static/media/vector-art-1.6738f0da.png": "/nh-digital-react/static/media/vector-art-1.6738f0da.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1884342c.js",
+    "static/js/2.143cdc01.chunk.js",
+    "static/css/main.81bf39c7.chunk.css",
+    "static/js/main.1444005c.chunk.js"
+  ]
+}
