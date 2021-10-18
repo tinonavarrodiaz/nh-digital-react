@@ -1,0 +1,30 @@
+.main-header{
+  height: var(--header-height);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-fixed);
+  @include from (l) {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-gap: 5%;
+    padding: 0 10vw;
+  }
+  &.fixed{
+    background: var(--header-color);
+  }
+}
+.logo{
+  width: auto;
+  height: 60%;
+  order: -1;
+  @include from (l){
+    order: unset;
+  }
+}

@@ -1,0 +1,36 @@
+$images-path: 'https://tinonavarrodiaz.github.io/nh-digital-assets/img';
+
+
+@function img($img) {
+  @return url(#{$images-path}/#{$img});
+}
+
+%list-style {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+// Convert pixels to rem
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+// Convert pixels to em
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function texto3d($numero, $color) {
+  $text-shadow: 2px 2px $color;
+
+  @for $i from 1 through $numero {
+    $text-shadow: '#{$text-shadow},
+#{$i}px #{$i}px #{$color}';
+
+  }
+
+  @return unquote($text-shadow);
+}

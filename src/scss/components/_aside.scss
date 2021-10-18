@@ -1,0 +1,458 @@
+.shape {
+  $size: 40vw;
+  font-family: var(--heading-font);
+  position: absolute;
+
+  &-left {
+    background-color: #03a9f5;
+    width: $size;
+    height: $size * 0.75;
+    top: 0 !important;
+    left: 0 !important;
+    border-radius: 0 calc(#{$size} * 0.1) calc(#{$size} * 0.1) 0;
+    transform: rotate($rot) translateX(-40%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 6%;
+    padding-bottom: 3%;
+    color: #fff;
+    // transition: transform var(--animateDiration) var(--animateDiration);
+    .active &{
+      animation: shepeLeft .3s .5s forwards;
+      @keyframes shepeLeft {
+        to{
+          transform: rotate($rot) translateX(-20%);
+
+        }
+      }
+    }
+
+    @include fromTo(l, 1400px) {
+      padding-right: 2%;
+      padding-bottom: 4%;
+    }
+
+    .mobile & {
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      padding-right: 0;
+
+    }
+
+    // opacity: 0;
+    // visibility: hidden;
+  }
+
+  &-right {
+    $size: 60vh;
+    flex-direction: column;
+    height: $size;
+    width: $size;
+    background-color: #f030b5;
+    bottom: 5vh;
+    right: 0;
+    border-radius: 50%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translateX(75%);
+    // transition: transform var(--animateDiration) var(--animateDiration);
+    svg{
+      width: 1em;
+      height: 1em;
+      color: #fff;
+      // position: relative;
+      // top: 5px;
+      // &:first-of-type{
+      //   top: 1px;
+      // }
+    }
+    .social-network{
+      @extend %list-style;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: .5em;
+      height: 1.1em;
+      // width: 7.7em;
+      padding-right: calc(25% + 1em);
+      li{
+        // margin-right: .5em;
+        display: block;
+      }
+      a{
+        // display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      svg{
+        height: 100%;
+      }
+    }
+    .mobile & {
+      display: none;
+    }
+     .active & {
+       animation: shepeRight .3s .5s forwards;
+       @keyframes shepeRight {
+         to {
+           transform: translateX(25%);
+
+         }
+       }
+     }
+  }
+}
+.aside-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  
+}
+.contact-item{
+  // padding-right: calc(25% + 1em);
+  padding-right: calc(25% + 1em);
+}
+
+.asideTitle{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(25% + 1em);
+  h2{
+    margin-bottom: 1em;
+    font-size: 1.8em;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      right: 0;
+      bottom: -.5em;
+      background-color: #fff
+    }
+  }
+}
+
+.shape-bg {
+  position: absolute;
+}
+
+.shape-bg3 {
+  background: img('shape-3.png') no-repeat;
+  height: 69px;
+  width: 67px;
+  top: 22vh;
+  left: 70vw;
+  animation: shape3 30s linear infinite;
+
+  @keyframes shape3 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.shape-bg1 {
+  background: img('shape-1.png') no-repeat;
+  height: 52px;
+  width: 51px;
+  top: 20vh;
+  left: 45vw;
+  animation-delay: 0.2s;
+
+  .mobile & {
+    top: 17vh;
+    left: 15vw;
+  }
+}
+
+.shape-bg5 {
+  background: img('shape-5.png') no-repeat;
+  height: 87px;
+  width: 24px;
+  top: 50vh;
+  left: 85vw;
+  animation-delay: 0.2s;
+
+  .mobile & {
+    top: 17vh;
+    left: 15vw;
+    display: none;
+  }
+}
+
+.shape-bg2 {
+  background: img('shape-6.png') no-repeat;
+  height: 87px;
+  width: 44px;
+  top: 82vh;
+  left: 30vw;
+  animation-delay: 0.2s;
+  animation: shape2 20s linear infinite alternate;
+  transform: translateY(0);
+
+  .mobile & {
+    top: 75vh;
+    left: 20vw;
+  }
+
+  @keyframes shape2 {
+    to {
+      transform: translateY(-7.5vh);
+    }
+  }
+}
+
+.shape-bg4 {
+  background: img('shape-4.png') no-repeat;
+  height: 67px;
+  width: 68px;
+  top: 75vh;
+  left: 60vw;
+  animation-delay: 0.2s;
+  animation: shape2 20s linear infinite;
+  transform: translateY(0);
+
+  .mobile & {
+    top: 65vh;
+    left: 70vw;
+  }
+
+  @keyframes shape2 {
+    33% {
+      transform: translateX(3vh) translateY(-1.5vh);
+    }
+
+    66% {
+      transform: translateX(0vh) translateY(-3vh);
+    }
+
+    100% {
+      transform: translateX(0vh) translateY(0vh);
+    }
+  }
+}
+
+.shape-right {
+  overflow: hidden;
+  color: var(--body-bg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  svg {
+    fill: var(--body-bg);
+  }
+}
+
+// .shapeModalRightContainer {
+//   width: 75%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   padding-right: 1.5em;
+//   opacity: 0;
+//   animation: showShape var(--animateDiration) var(--animateDiration) forwards;
+// }
+.contact-data-title {
+  $mb: 1em;
+  font-size: 2em;
+  padding-bottom: 1em;
+  position: relative;
+  margin-bottom: 1em;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background-color: var(--body-bg);
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.modalContactData {
+  @extend %list-style;
+  text-align: right;
+  font-size: 1.3em;
+
+  >li {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: white;
+      max-width: 0;
+      transition: max-width 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        max-width: 100%;
+      }
+    }
+
+    >a::after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      width: 1em;
+      height: 1em;
+      margin-left: .5rem;
+      background: brown;
+    }
+
+    &:first-child {
+      >a::after {
+        background: img('whatsapp.svg') center / cover no-repeat;
+      }
+    }
+
+    &:nth-child(2) {
+      >a::after {
+        background: img('envelope1.svg') center / cover no-repeat;
+      }
+    }
+  }
+
+  a {
+    transition: color 0.3s;
+
+    &:hover {
+      // color: var(--color-main);
+    }
+  }
+}
+
+// .social-fullscreen-right {
+//   // $height: 1.4em;
+//   // @extend %list-style;
+//   // display: flex;
+//   // height: $height;
+//   // margin-top: 0.75em;
+//   // opacity: 0;
+//   // animation: showShape var(--animateDiration) var(--animateDiration) forwards;
+//   // li,
+//   // a {
+//   //   display: block;
+//   //   width: $height;
+//   //   height: $height;
+//   //   .mobile & {
+//   //     width: $height * 1.5;
+//   //     height: $height * 1.5;
+//   //   }
+//   // }
+//   // li {
+//   //   // background-color: limegreen;
+//   //   margin-right: 1em;
+//   //   &:nth-child(2), &:nth-child(1){
+//   //     display: none;
+//   //   }
+//   //   &:last-child {
+//   //     margin-right: 0;
+//   //   }
+//   // }
+//   // a {
+//   //   display: flex;
+//   //   justify-content: center;
+//   //   align-items: center;
+//   //   // background: lime;
+//   // }
+//   // svg {
+//   //   width: auto;
+//   //   height: 100%;
+//   //   max-width: 100%;
+//   //   fill: #fff;
+//   // }
+// }
+
+@keyframes showShape {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.toTop {
+  $size: 3.5rem;
+  position: fixed;
+  display: block;
+  background: #7004BC;
+  bottom: 1.5rem;
+  right: 6rem;
+  width: $size;
+  height: $size;
+  padding: $size * .3;
+  transform: rotate(180deg);
+  border-radius: 50%;
+  cursor: pointer;
+  // box-shadow: 0 0 0 1px #fff;
+  transition: all .3s;
+  opacity: 0;
+  visibility: hidden;
+
+  .mobile & {
+    right: unset;
+    left: 1rem;
+  }
+
+  &:hover {
+    background: #217EFE;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.screen-full{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(#000,.50);
+  width: 100%;
+  height: 100vh;
+  z-index: var(--z-modal);
+  visibility: hidden;
+  opacity: 0;
+  &.active{
+    animation: fullActive .5s forwards;
+    @keyframes fullActive { 
+      to{
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+.contact-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5em;
+  // background: lime;
+  margin-bottom: 1em;
+  svg{
+    margin-left: 1em;
+    width: 1em; 
+    height: 1em;
+    position: relative;
+    top: 2px;
+  }
+}
