@@ -9,7 +9,9 @@ body {
   width: 100%;
   margin: 0;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--body-font);
   background: var(--body-bg);
@@ -56,4 +58,7 @@ p {
   &:only-of-type {
     margin-bottom: 0;
   }
+}
+.logo{
+  cursor: pointer;
 }

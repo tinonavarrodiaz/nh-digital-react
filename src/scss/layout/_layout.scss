@@ -1,0 +1,28 @@
+// .section{
+//   padding-left: 1em;
+//   padding-right: 1em;
+//   @include from (l){
+//     padding-left: 10vw;
+//     padding-right: 10vw;
+
+//   }
+// }
+.section__container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @include from (l) {
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+}
+.contacto form {
+  margin-top: 1.5em;
+  @include from (l) {
+    margin-top: 0;
+  }
+}

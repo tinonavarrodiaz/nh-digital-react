@@ -9,34 +9,61 @@
 @import 'config/mixins';
 
 
-// Theme (colors and fonts)
+// // Theme (colors and fonts)
 @import 'theme/typography';
 
-// Base and elements (generic)
+// // Base and elements (generic)
 @import 'base/base';
 
 // LAYOUT
 // Escribe solo los estilos de layout (division en regiones del viewport)
 @import 'layout/layout';
 
-// MODULOS (SMACSS) O COMPONENTES (ITCSS)
-// Son los elementos de UI de tu interfaz, como botones, tablas, menus, etc.
-// Crea los archivos adicionales que necesites (uno por componente)
+// // MODULOS (SMACSS) O COMPONENTES (ITCSS)
+// // Son los elementos de UI de tu interfaz, como botones, tablas, menus, etc.
+// // Crea los archivos adicionales que necesites (uno por componente)
 @import 'components/buttons';
 @import 'components/menu';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/aside';
+@import 'components/modal';
 @import 'sections/home';
+@import 'sections/about';
+@import 'sections/services';
+@import 'sections/contact';
+@import 'sections/portfolio';
 
 
-// Utilities (hacks)
-// Todos los hacks que hayas necesitado para solucionar conflictos
-// o resolver situaciones extremas. Se espera poder mejorarlos luego.
+// // Utilities (hacks)
+// // Todos los hacks que hayas necesitado para solucionar conflictos
+// // o resolver situaciones extremas. Se espera poder mejorarlos luego.
 @import 'hacks/hacks';
 
-body{
-  @include from(l){
-    background-color: lightyellow;
+section:target{
+  padding-top: var(--header-height);
+}
+section.contacto:target{
+  padding-top: 0;
+}
+
+section.contacto{
+  position: relative;
+  @include to(l){
+    padding-bottom: 50px;
   }
+}
+section.portafolio {
+  @include to(l){
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+.copy{
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
 }

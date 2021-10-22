@@ -1,43 +1,55 @@
 $size-mobile: 3.5rem;
-.main-nav{
-  position: absolute;
-  top: 0; //var(--header-height);
-  left: 0;
-  height: 100vh; //calc(100vh - var(--header-height));
-  width: 100%;
-  background: var(--color-nav-active);
-  transform: translateX(-100%);
-  transition: transform .5s;
-  @include to(l){
+
+.main-nav {
+  @include to(l) {
+    position: fixed;
     display: flex;
+    flex-direction: column;
+    background-color: #03A9F5;
+    align-items: center;
+    justify-content: center;
+    width: $width100;
+    height: 100vh;
+    // max-height: calc(100vh - var(--header-height));
+    top: 0;
+    left: 0;
+    transition: transform .5s;
+    opacity: 1;
+    transform-origin: center;
+    transform: translateX(-100%);
     z-index: -1;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  @include from (l) {
-    position: relative;
-    height: auto;
-    top: unset;
-    left: unset;
-    transform:unset;
-    background: transparent;
+  @include from(l) {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: flex-end;
   }
-  &.active{
-    transform: translateY(0);
-  }
+  color: var(--body-bg)
 }
-.main-menu{
+
+.main-menu,
+.social {
   @extend %list-style;
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  @include to(l){
+}
+
+.main-menu {
+  position: relative;
+
+  @include to(l) {
     margin-bottom: $size-mobile;
     font-size: $size-mobile * .5;
-    margin: auto;
+
     li {
       position: relative;
       line-height: $size-mobile;
       padding-left: $size-mobile * .75;
-
+      
       &:last-child a::before {
         display: none;
       }
@@ -78,67 +90,88 @@ $size-mobile: 3.5rem;
 
     }
   }
-  @include from(l){
-    flex-direction: row;
+
+  @include from(l) {
+    display: flex;
     justify-content: flex-end;
+    li{
+      margin-right: 2em;
+
+    }
   }
 }
-.menu-other{
-   @extend %list-style;
-   display: flex;
-   flex-direction: column;
-   color: #fff;
-   transform: rotate(-30deg);
-    position: absolute;
-    bottom: 15%;
-    right: 18%;
-     margin-bottom: $size-mobile;
-     font-size: $size-mobile * .4;
-     margin: auto;
 
-     li {
-       position: relative;
-       line-height: $size-mobile;
-       padding-left: $size-mobile * .75;
+.social {
+  width: 70%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(5, 1fr);
 
-       &:last-child a::before {
-         display: none;
-       }
-     }
+  @include from(l) {
 
-     a {
-       display: block;
-       position: relative;
+    width: auto;
+    margin: 0 !important;
+  }
 
-       &::before,
-       &::after {
-         content: '';
-         position: absolute;
-         display: block;
-         left: -$size-mobile * .75;
-         top: 50%;
-       }
+  a {
+    width: $size-mobile * .5;
+    height: $size-mobile * .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-       &::after {
-         width: $size-mobile * .25;
-         height: $size-mobile * .25;
-         background: #03A9F5;
-         transform: translateY(-50%);
-         border-radius: 50%;
-         border: 2px solid var(--body-bg);
-       }
+    @include from(l) {
+      width: $size-mobile * .4;
+    }
+  }
 
-       &::before {
-         width: 1px;
-         height: $size-mobile;
-         background-color: var(--body-bg);
-         transform: translateX(6px);
-       }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-       &.active:after {
-         background: var(--body-bg);
-       }
+    &:nth-child(3) {
+      svg {
+        display: inline-block;
+        transform: scale(.75);
 
-     }
-   
+      }
+    }
+  }
+
+  svg {
+    height: $size-mobile * .5;
+    width: auto;
+    fill: var(--body-bg);
+
+    @include from(l) {
+      width: $size-mobile * .4;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .main-menu a {
+    transition: color .3s;
+
+    &:hover,
+    &.active {
+      color: hsl(316, 87, 75);
+      // text-shadow: 1px 1px lighten($color: #f021b6, $amount:30);
+    }
+  }
+
+ 
+}
+// .main-nav{
+//   background-color:lime;
+// }
+// .main-menu{
+//   background-color: tomato !important;
+// }
+.social.contac {
+  @include from(l) {
+    margin: 0 auto !important;
+  }
 }

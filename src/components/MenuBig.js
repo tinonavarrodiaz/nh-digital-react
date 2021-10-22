@@ -29,13 +29,13 @@ export default class MenuBig extends Component {
               </a>
             </div>
             <ul className="social-network">
-              <li><a href="" target="_blank" rel="noopener noreferrer"><Facebook/></a>
+              <li><a href="/#" target="_blank" rel="noopener noreferrer"><Facebook/></a>
               {/* eslint-disable-next-line */}
               </li>
-              <li><a href="" target="_blank" rel="noopener noreferrer"><Twitter/></a>
+              <li><a href="/#" target="_blank" rel="noopener noreferrer"><Twitter/></a>
               {/* eslint-disable-next-line */}
               </li>
-              <li><a href="" target="_blank" rel="noopener noreferrer"><Instragram/></a>
+              <li><a href="/#" target="_blank" rel="noopener noreferrer"><Instragram/></a>
               {/* eslint-disable-next-line */}
               </li>
             </ul>

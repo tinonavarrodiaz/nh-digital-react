@@ -15,7 +15,7 @@ $linear-gradient: linear-gradient(to right, #3264f5 2%, #7004bc 82%);
   --header-color: #{$linear-gradient};
   --social-size: 2em;
   --animateDiration: 0.5s;
-  --body-bg: rgb(255, 255, 255);
+  --body-bg: #fdfdfd;
   --color-main: #3264f5;
   --color-nav: transparent;
   --color-nav-active : #03A9F5;
@@ -84,5 +84,5 @@ $z-modal: 1000;
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
-  --z-menu: 10000;
+  --z-menu: 90;
 }

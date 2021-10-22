@@ -136,6 +136,9 @@ button {
     top: 0;
     left: 0;
     transform: translateX(450%) translateY(250%) rotate(-30deg);
+    @include from (1900px){
+      transform: translateX(600%) translateY(350%) rotate(-30deg);
+    }
   }
 }
 
@@ -188,4 +191,9 @@ button {
     color: #444;
     cursor: default !important;
   }
+}
+button[disabled="disabled"] {
+  background: linear-gradient(to right,#888, #aaa);
+  // color: #666;
+  cursor: default !important;
 }

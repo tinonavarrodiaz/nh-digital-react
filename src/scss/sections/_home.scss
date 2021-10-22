@@ -71,7 +71,7 @@
       color: transparent;
     }
 
-    .mobile & {
+    @include to(l) {
       font-size: 1.7em;
     }
   }
